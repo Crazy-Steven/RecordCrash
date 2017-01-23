@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CrashLogUpdate.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    [CrashLogUpdate setDefaultHandler];
+    // 查看是否有奔溃日志
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *dataPath = [path stringByAppendingPathComponent:@"Exception.txt"];
+    NSData *data = [NSData dataWithContentsOfFile:dataPath];
+    if (data != nil) {
+        [self sendExceptionLogWithData:data path:dataPath];
+    }
+    
     return YES;
 }
 
@@ -46,6 +56,37 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
+    
+ #pragma mark -- 发送崩溃日志
+ - (void)sendExceptionLogWithData:(NSData *)data path:(NSString *)path {
+     NSString * string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+     
+     NSLog(@"%@",string);
+     
+     // 删除文件
+     NSFileManager *fileManger = [NSFileManager defaultManager];
+     [fileManger removeItemAtPath:path error:nil];
+     
+     /*可以使用af将奔溃日志上传
+     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+     manager.requestSerializer.timeoutInterval = 5.0f;
+     //告诉AFN，支持接受 text/xml 的数据
+     [AFJSONResponseSerializer serializer].acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
+     NSString *urlString = @"后台地址";
+     
+     [manager POST:urlString parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+     [formData appendPartWithFileData:data name:@"file" fileName:@"Exception.txt" mimeType:@"txt"];
+     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+     // 删除文件
+     NSFileManager *fileManger = [NSFileManager defaultManager];
+     [fileManger removeItemAtPath:path error:nil];
+     
+     } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+     
+     
+     }];
+     
+     }*/
+}
 
 @end

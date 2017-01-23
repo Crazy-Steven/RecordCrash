@@ -10,4 +10,7 @@
 
 @interface CrashLogUpdate : NSObject
 
++ (void)setDefaultHandler;
++ (NSUncaughtExceptionHandler *)getHandler;
++ (void)TakeException:(NSException *) exception;
 @end

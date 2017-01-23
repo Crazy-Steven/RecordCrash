@@ -16,7 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    UIButton * botton = ({
+        UIButton * btn = [[UIButton alloc]initWithFrame:(CGRect){0,0,100,50}];
+        btn.center = self.view.center;
+        [btn addTarget:self action:@selector(crashTest) forControlEvents:UIControlEventTouchDown];
+        btn.backgroundColor = [UIColor redColor];
+        [self.view addSubview:btn];
+        btn;
+    });
 }
 
 
@@ -25,5 +32,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (void)crashTest{
+    NSArray * arr = @[];
+    NSLog(@"%@",arr[1]);
+}
 @end

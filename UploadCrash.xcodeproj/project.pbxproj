@@ -13,6 +13,7 @@
 		B0DA4ACE1E36061300DE1D75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0DA4ACC1E36061300DE1D75 /* Main.storyboard */; };
 		B0DA4AD01E36061300DE1D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0DA4ACF1E36061300DE1D75 /* Assets.xcassets */; };
 		B0DA4AD31E36061300DE1D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0DA4AD11E36061300DE1D75 /* LaunchScreen.storyboard */; };
+		B0DA4AE21E36067200DE1D75 /* CrashLogUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DA4AE11E36067200DE1D75 /* CrashLogUpdate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		B0DA4ACF1E36061300DE1D75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0DA4AD21E36061300DE1D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0DA4AD41E36061300DE1D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0DA4AE01E36067200DE1D75 /* CrashLogUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrashLogUpdate.h; sourceTree = "<group>"; };
+		B0DA4AE11E36067200DE1D75 /* CrashLogUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrashLogUpdate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				B0DA4AC71E36061300DE1D75 /* AppDelegate.m */,
 				B0DA4AC91E36061300DE1D75 /* ViewController.h */,
 				B0DA4ACA1E36061300DE1D75 /* ViewController.m */,
+				B0DA4AE01E36067200DE1D75 /* CrashLogUpdate.h */,
+				B0DA4AE11E36067200DE1D75 /* CrashLogUpdate.m */,
 				B0DA4ACC1E36061300DE1D75 /* Main.storyboard */,
 				B0DA4ACF1E36061300DE1D75 /* Assets.xcassets */,
 				B0DA4AD11E36061300DE1D75 /* LaunchScreen.storyboard */,
@@ -151,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0DA4ACB1E36061300DE1D75 /* ViewController.m in Sources */,
+				B0DA4AE21E36067200DE1D75 /* CrashLogUpdate.m in Sources */,
 				B0DA4AC81E36061300DE1D75 /* AppDelegate.m in Sources */,
 				B0DA4AC51E36061300DE1D75 /* main.m in Sources */,
 			);
