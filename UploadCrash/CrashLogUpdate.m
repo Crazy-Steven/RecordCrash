@@ -26,12 +26,6 @@ void UncaughtExceptionHandler(NSException * exception) {
 
 
 @implementation CrashLogUpdate
-
-// 沙盒地址
-- (NSString *)applicationDocumentsDirectory {
-    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-}
-
 + (void)setDefaultHandler {
     NSSetUncaughtExceptionHandler(&UncaughtExceptionHandler);
 }
